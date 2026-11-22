@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#08090d">
+  <meta name="description" content="Mahadeva Siddavatam — Cybersecurity and SOC Analyst L1 portfolio. Explore SIEM monitoring, alert investigation, network security and security lab projects.">
+  <title>Mahadeva Siddavatam | Cybersecurity Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#08090d;--panel:#10131b;--panel2:#141925;--text:#f4f5f8;--muted:#a2a9b8;--red:#ff334f;--red2:#c51f39;--line:rgba(255,255,255,.1);--mono:"DM Mono",monospace;--sans:"Manrope",sans-serif;--max:1160px}
+    *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:90px}body{margin:0;background:var(--bg);color:var(--text);font-family:var(--sans);line-height:1.65;overflow-x:hidden}
+    body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;background:radial-gradient(ellipse at 80% 10%,rgba(255,51,79,.13),transparent 34%),radial-gradient(ellipse at 0% 50%,rgba(197,31,57,.08),transparent 28%)}
+    a{color:inherit;text-decoration:none}.wrap{width:min(var(--max),calc(100% - 44px));margin:auto}
+    .topbar{position:sticky;top:0;z-index:50;background:rgba(8,9,13,.88);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+    nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px}.logo{font-weight:800;letter-spacing:.08em;font-size:.94rem}.logo b{color:var(--red)}
+    .navlinks{display:flex;gap:27px;color:#b7bdca;font-size:.86rem}.navlinks a:hover,.navlinks a.active{color:white}.navlinks a.active:after{content:"";display:block;height:2px;background:var(--red);margin-top:5px}
+    .menu{display:none;background:transparent;border:1px solid var(--line);border-radius:9px;color:white;padding:8px 12px}
+    .hero{min-height:690px;display:grid;grid-template-columns:1.15fr .85fr;align-items:center;gap:65px;padding-top:70px;padding-bottom:90px}
+    .kicker{font:500 .75rem var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--red)}.kicker:before{content:"";display:inline-block;width:26px;height:1px;background:var(--red);vertical-align:middle;margin-right:10px}
+    h1{font-size:clamp(3rem,7vw,6.3rem);line-height:.99;letter-spacing:-.075em;margin:23px 0 18px;font-weight:800}h1 span{color:var(--red)}
+    .role{font-size:clamp(1.05rem,2vw,1.35rem);font-weight:700;color:#d9dce5;margin:0 0 18px}.intro{max-width:660px;color:var(--muted);font-size:1rem}
+    .btnrow{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:12px 17px;border:1px solid var(--line);border-radius:8px;font-size:.85rem;font-weight:800;transition:.2s}.btn.primary{background:var(--red);border-color:var(--red);box-shadow:0 8px 28px #ff334f2c}.btn:hover{transform:translateY(-3px);border-color:var(--red)}.btn.primary:hover{background:#e72a44}
+    .hero-visual{position:relative;min-height:420px;display:grid;place-items:center}.orbit{width:min(390px,90vw);aspect-ratio:1;border:1px solid #ff334f45;border-radius:50%;display:grid;place-items:center;position:relative;box-shadow:0 0 90px #ff334f12,inset 0 0 60px #ff334f0b}
+    .orbit:before,.orbit:after{content:"";position:absolute;border:1px dashed #ff334f4a;border-radius:50%;inset:28px;animation:spin 34s linear infinite}.orbit:after{inset:62px;animation-direction:reverse;animation-duration:25s}
+    @keyframes spin{to{transform:rotate(360deg)}}.core{width:170px;height:170px;border-radius:35px;background:linear-gradient(145deg,#23121a,#11141d);border:1px solid #ff334f7a;display:grid;place-items:center;box-shadow:0 0 55px #ff334f22;z-index:1}
+    .core svg{width:88px;height:88px;stroke:var(--red);fill:none;stroke-width:1.5}.orbit-label{position:absolute;font: .68rem var(--mono);color:#f0a0aa;background:#11131a;border:1px solid #ff334f55;padding:7px 10px;border-radius:6px}.l1{top:10%;left:3%}.l2{right:-3%;top:34%}.l3{bottom:13%;left:5%}.l4{bottom:3%;right:18%}
+    .terminal{position:absolute;right:-18px;bottom:0;width:240px;background:#0c0e14;border:1px solid var(--line);border-radius:10px;padding:13px 15px;box-shadow:0 18px 55px #0008;font: .68rem var(--mono);color:#9fa8b8}.termhead{display:flex;gap:5px;margin-bottom:11px}.dot{width:7px;height:7px;border-radius:50%;background:#ff5265}.dot:nth-child(2){background:#e7b45a}.dot:nth-child(3){background:#6bc69b}.termline{margin:5px 0}.termline em{color:#ff6479;font-style:normal}
+    section{padding:96px 0;border-top:1px solid var(--line)}.section-head{margin-bottom:34px}.num{font: .72rem var(--mono);color:var(--red);letter-spacing:.12em}.section-title{font-size:clamp(2rem,4vw,3.4rem);letter-spacing:-.06em;line-height:1.12;margin:10px 0}.section-desc{max-width:720px;color:var(--muted);margin:0}
+    .aboutgrid{display:grid;grid-template-columns:1.2fr .8fr;gap:18px}.card{background:linear-gradient(145deg,#141925,#0e1118);border:1px solid var(--line);border-radius:14px;padding:27px}.card p{color:var(--muted);margin-top:0}.focus{display:grid;gap:14px}.focus div{display:flex;gap:12px;color:#dfe2e9;font-size:.92rem}.check{color:var(--red);font-family:var(--mono)}
+    .skillgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}.skillcard h3{margin:0 0 16px;font-size:1rem}.skillcard h3 span{color:var(--red);font: .7rem var(--mono);margin-right:9px}.tags{display:flex;gap:8px;flex-wrap:wrap}.tag{font: .75rem var(--mono);padding:7px 10px;border:1px solid #ffffff12;background:#ffffff08;border-radius:6px;color:#d0d5df}
+    .projectgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:17px}.project{background:linear-gradient(145deg,#151a25,#0d1017);border:1px solid var(--line);border-radius:14px;padding:26px;position:relative;overflow:hidden;transition:.25s}.project:hover{transform:translateY(-5px);border-color:#ff334f77}.project:after{content:"";position:absolute;width:150px;height:150px;border-radius:50%;background:#ff334f0c;right:-70px;top:-70px}.projecttop{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px}.picon{width:43px;height:43px;border:1px solid #ff334f55;border-radius:10px;display:grid;place-items:center;color:var(--red);font-size:1.2rem}.ptype{font: .65rem var(--mono);color:var(--red);letter-spacing:.12em;text-transform:uppercase}.project h3{font-size:1.15rem;margin:0 0 10px}.project p,.project li{font-size:.87rem;color:var(--muted)}.project ul{padding-left:19px;margin:13px 0 18px}.project li{margin:6px 0}.project .tags{margin-top:17px}.labnote{font: .72rem var(--mono);color:#b6bdca;margin-top:22px}
+    .opsgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.op{background:var(--panel);border:1px solid var(--line);padding:18px;border-radius:10px}.op strong{display:block;font-size:.88rem}.op small{color:var(--muted);font: .68rem var(--mono)}
+    .edu{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.edu .card{padding:21px}.edu h3{font-size:.94rem;margin:0 0 8px}.edu p{font-size:.82rem;margin:0;color:var(--muted)}.certs{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:16px}.cert{background:#121722;border:1px solid var(--line);padding:18px;border-radius:10px;font-weight:700;font-size:.88rem}.cert small{display:block;color:var(--muted);font-weight:400;margin-top:5px}
+    .contact{display:grid;grid-template-columns:1fr .8fr;gap:25px;align-items:center;background:linear-gradient(120deg,#241019,#11151e 65%);border:1px solid #ff334f55;border-radius:16px;padding:35px}.contact h2{font-size:clamp(1.8rem,4vw,2.8rem);line-height:1.1;letter-spacing:-.05em;margin:12px 0}.contact p{color:var(--muted)}.contactdetails{display:grid;gap:14px}.contactdetails span{display:block;color:var(--muted);font: .68rem var(--mono);text-transform:uppercase;letter-spacing:.1em}.contactdetails a,.contactdetails strong{font-size:.9rem;overflow-wrap:anywhere}
+    footer{border-top:1px solid var(--line);padding:25px 0;color:var(--muted);font: .72rem var(--mono);text-align:center}.reveal{opacity:0;transform:translateY(18px);transition:.65s ease}.reveal.show{opacity:1;transform:none}
+    @media(max-width:850px){.hero{grid-template-columns:1fr;gap:35px;padding-top:60px}.hero-visual{min-height:390px}.aboutgrid{grid-template-columns:1fr}.opsgrid{grid-template-columns:repeat(2,1fr)}.edu,.certs{grid-template-columns:1fr 1fr}.contact{grid-template-columns:1fr}}
+    @media(max-width:620px){.wrap{width:calc(100% - 30px)}nav{height:68px}.menu{display:block}.navlinks{display:none;position:absolute;top:68px;left:0;right:0;padding:20px 24px;background:#0b0d13;border-bottom:1px solid var(--line);flex-direction:column;gap:17px}.navlinks.open{display:flex}.hero{padding:55px 0 65px;min-height:auto}.hero-visual{min-height:330px}.orbit{width:300px}.core{width:130px;height:130px}.core svg{width:68px}.terminal{right:-2px;width:205px}.l2{right:-1%}section{padding:70px 0}.skillgrid,.projectgrid,.edu,.certs{grid-template-columns:1fr}.card,.project{padding:21px}.contact{padding:23px}.opsgrid{grid-template-columns:1fr 1fr}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+  </style>
+</head>
+<body>
+<header class="topbar"><nav class="wrap">
+  <a class="logo" href="#home">MAHADEVA<span>.</span><b>SEC</b></a>
+  <button class="menu" id="menu" aria-expanded="false" aria-label="Toggle navigation">MENU ☰</button>
+  <div class="navlinks" id="nav"><a href="#about">About</a><a href="#skills">Security Skills</a><a href="#projects">Projects</a><a href="#operations">SOC Focus</a><a href="#education">Education</a><a href="#contact">Contact</a></div>
+</nav></header>
+
+<main>
+<section class="hero wrap" id="home">
+  <div class="reveal">
+    <div class="kicker">Cybersecurity portfolio / 2026</div>
+    <h1>MAHADEVA<br><span>SIDDAVATAM</span></h1>
+    <p class="role">Aspiring Cybersecurity Analyst&nbsp; / &nbsp;SOC Analyst L1</p>
+    <p class="intro">Defending digital infrastructure. Detecting suspicious activity. Investigating security events. A Computer Science and Engineering graduate building practical skills through SIEM, network security and controlled cybersecurity labs.</p>
+    <div class="btnrow"><a class="btn primary" href="#projects">Explore security projects ↘</a><a class="btn" href="mailto:devamahadeva44@gmail.com">Contact me ↗</a><a class="btn" href="Mahadeva-Siddavatam-Resume.pdf" download>Download resume ↓</a></div>
+  </div>
+  <div class="hero-visual reveal" aria-label="Cybersecurity shield illustration">
+    <div class="orbit"><span class="orbit-label l1">THREAT DETECTION</span><span class="orbit-label l2">SIEM / SOC</span><span class="orbit-label l3">NETWORK DEFENSE</span><span class="orbit-label l4">INCIDENT RESPONSE</span>
+      <div class="core"><svg viewBox="0 0 100 100" aria-hidden="true"><path d="M50 8 82 20v25c0 22-13 37-32 47C31 82 18 67 18 45V20L50 8Z"/><path d="m35 49 10 10 21-23"/><path d="M50 19v9"/></svg></div>
+    </div>
+    <div class="terminal"><div class="termhead"><i class="dot"></i><i class="dot"></i><i class="dot"></i></div><div class="termline">&gt; initializing_sec_ops...</div><div class="termline"><em>[OK]</em> SIEM lab ready</div><div class="termline"><em>[OK]</em> log sources configured</div><div class="termline"><em>[INFO]</em> analyst mode: learning</div><div class="termline">&gt; monitoring_events<span class="cursor">_</span></div></div>
+  </div>
+</section>
+
+<section id="about"><div class="wrap">
+  <div class="section-head reveal"><div class="num">01 / ABOUT</div><h2 class="section-title">Focused on understanding<br>how threats are detected.</h2><p class="section-desc">Cybersecurity graduate with hands-on academic and lab exposure to SIEM tools, network fundamentals, endpoint logs and basic vulnerability assessment.</p></div>
+  <div class="aboutgrid"><article class="card reveal"><p>I completed a Bachelor of Technology in Computer Science and Engineering at Sri Venkateswara College of Engineering and Technology, Chittoor. My current focus is security operations: monitoring events, investigating alerts, analysing logs and documenting findings.</p><p>In controlled lab environments, I have practised with Elastic SIEM, Kibana, Windows Event Logs, Nmap, Metasploit, Netcat, Linux and Windows systems. I am seeking an entry-level opportunity where I can continue developing as a SOC Analyst L1 or Cybersecurity Analyst.</p></article>
+  <div class="card focus reveal"><div><span class="check">◆</span> SIEM monitoring and alert triage</div><div><span class="check">◆</span> Windows and Linux log investigation</div><div><span class="check">◆</span> Network protocols and service discovery</div><div><span class="check">◆</span> Suspicious activity and IOC investigation</div><div><span class="check">◆</span> Incident reporting and remediation notes</div></div></div>
+</div></section>
+
+<section id="skills"><div class="wrap">
+  <div class="section-head reveal"><div class="num">02 / CYBERSECURITY TOOLKIT</div><h2 class="section-title">Security skills & technologies</h2><p class="section-desc">A focused view of the cybersecurity tools and concepts listed in my resume and lab experience.</p></div>
+  <div class="skillgrid">
+    <article class="card skillcard reveal"><h3><span>01</span> SIEM & Security Monitoring</h3><div class="tags"><span class="tag">Elastic SIEM</span><span class="tag">Kibana</span><span class="tag">Splunk</span><span class="tag">Log Analysis</span><span class="tag">Alert Correlation</span><span class="tag">Incident Triage</span></div></article>
+    <article class="card skillcard reveal"><h3><span>02</span> Network Security</h3><div class="tags"><span class="tag">TCP/IP</span><span class="tag">DNS</span><span class="tag">HTTP</span><span class="tag">SMB</span><span class="tag">Firewall Concepts</span><span class="tag">VPN Concepts</span><span class="tag">Port Scanning</span></div></article>
+    <article class="card skillcard reveal"><h3><span>03</span> Security Tools</h3><div class="tags"><span class="tag">Nmap</span><span class="tag">Metasploit</span><span class="tag">Wireshark (Basic)</span><span class="tag">Netcat</span><span class="tag">Kali Linux</span></div></article>
+    <article class="card skillcard reveal"><h3><span>04</span> Endpoint & Security Concepts</h3><div class="tags"><span class="tag">Windows Event Logs</span><span class="tag">Linux</span><span class="tag">Windows</span><span class="tag">PowerShell</span><span class="tag">Bash Scripting</span><span class="tag">MITRE ATT&CK</span><span class="tag">Cyber Kill Chain</span><span class="tag">IOC Investigation</span></div></article>
+  </div>
+</div></section>
+
+<section id="projects"><div class="wrap">
+  <div class="section-head reveal"><div class="num">03 / LAB EXPERIENCE</div><h2 class="section-title">Featured cybersecurity projects</h2><p class="section-desc">Practical exercises carried out in learning environments. Project descriptions reflect the lab experience stated in my resume.</p></div>
+  <div class="projectgrid">
+    <article class="project reveal"><div class="projecttop"><div class="picon">⌕</div><span class="ptype">SOC / SIEM</span></div><h3>SOC Monitoring & Alert Investigation Lab</h3><p>Practised SOC-style monitoring using Elastic SIEM, Kibana and Windows Event Logs.</p><ul><li>Ingested Windows Event Logs and reviewed events from multiple sources.</li><li>Practised alert triage and true-positive / false-positive classification.</li><li>Configured Kibana detection for repeated failed logins (more than 3 failures).</li><li>Prepared 10+ structured incident reports with evidence, timeline, root-cause notes and remediation actions.</li></ul><div class="tags"><span class="tag">Elastic SIEM</span><span class="tag">Kibana</span><span class="tag">Windows Logs</span><span class="tag">MITRE ATT&CK</span></div></article>
+    <article class="project reveal"><div class="projecttop"><div class="picon">⌁</div><span class="ptype">DETECTION / INVESTIGATION</span></div><h3>Reverse Shell Detection & Log Investigation Lab</h3><p>Simulated reverse-shell and command-and-control activity on isolated Windows/Linux lab systems and investigated the resulting telemetry.</p><ul><li>Used PowerShell and Netcat to generate controlled test activity.</li><li>Reviewed Elastic logs for suspicious execution and command-and-control indicators.</li><li>Correlated network activity with system event data.</li><li>Documented lateral-movement indicators, findings and remediation recommendations.</li></ul><div class="tags"><span class="tag">PowerShell</span><span class="tag">Elastic</span><span class="tag">Metasploit</span><span class="tag">Netcat</span></div></article>
+    <article class="project reveal"><div class="projecttop"><div class="picon">⌘</div><span class="ptype">SECURITY AUTOMATION</span></div><h3>Automated Security Monitoring Scripts</h3><p>Created basic scripts to practise repeatable monitoring and security checks in Linux and Windows environments.</p><ul><li>Developed Bash checks for website uptime and HTTP response codes.</li><li>Monitored service availability and generated alert messages.</li><li>Created basic Python and Bash port-enumeration scripts.</li><li>Recorded exposed services to support attack-surface awareness.</li></ul><div class="tags"><span class="tag">Bash</span><span class="tag">Python (Basic)</span><span class="tag">PowerShell</span><span class="tag">Nmap</span></div></article>
+    <article class="project reveal"><div class="projecttop"><div class="picon">◎</div><span class="ptype">NETWORK SECURITY</span></div><h3>Network Discovery & Vulnerability Assessment Practice</h3><p>Practised foundational network discovery and basic vulnerability-assessment workflows in a controlled learning environment.</p><ul><li>Reviewed TCP/IP, DNS, HTTP and SMB fundamentals.</li><li>Used Nmap for host, port and service discovery in lab networks.</li><li>Explored how exposed services contribute to attack surface.</li><li>Recorded observations for further security investigation.</li></ul><div class="tags"><span class="tag">Nmap</span><span class="tag">TCP/IP</span><span class="tag">SMB</span><span class="tag">Kali Linux</span></div></article>
+  </div>
+  <p class="labnote">NOTE: All simulations and testing are intended for isolated, authorized lab environments only. Add GitHub repository links and genuine screenshots when available.</p>
+</div></section>
+
+<section id="operations"><div class="wrap">
+  <div class="section-head reveal"><div class="num">04 / SECURITY OPERATIONS</div><h2 class="section-title">SOC analyst focus areas</h2><p class="section-desc">Core workflows I practise and want to develop further in an entry-level security operations role.</p></div>
+  <div class="opsgrid">
+    <div class="op reveal"><strong>Security Alert Monitoring</strong><small>SIEM / EVENT REVIEW</small></div><div class="op reveal"><strong>Incident Investigation</strong><small>TRIAGE / EVIDENCE</small></div><div class="op reveal"><strong>Log Analysis</strong><small>WINDOWS / LINUX</small></div><div class="op reveal"><strong>Threat Detection</strong><small>RULES / INDICATORS</small></div><div class="op reveal"><strong>IOC Investigation</strong><small>OBSERVABLES</small></div><div class="op reveal"><strong>Brute-force Detection</strong><small>AUTHENTICATION EVENTS</small></div><div class="op reveal"><strong>Network Investigation</strong><small>TRAFFIC / SERVICES</small></div><div class="op reveal"><strong>Incident Documentation</strong><small>TIMELINE / REMEDIATION</small></div>
+  </div>
+  <p class="labnote">This section describes learning focus areas, not a live security operations dashboard.</p>
+</div></section>
+
+<section id="education"><div class="wrap">
+  <div class="section-head reveal"><div class="num">05 / EDUCATION & CERTIFICATION</div><h2 class="section-title">Academic background</h2></div>
+  <div class="edu">
+    <article class="card reveal"><h3>B.Tech — Computer Science & Engineering</h3><p>Sri Venkateswara College of Engineering and Technology, Chittoor</p><p>Jan 2020 – May 2024 · CGPA 7.10</p></article>
+    <article class="card reveal"><h3>Intermediate — MPC</h3><p>MKR Junior College, T. Sundupalli, Rayachoti</p><p>June 2018 – May 2020 · CGPA 7.70</p></article>
+    <article class="card reveal"><h3>10th Class</h3><p>ZPHS School, Guntharachapalli, Rayachoti</p><p>July 2017 – May 2018 · CGPA 8.80</p></article>
+  </div>
+  <div class="certs"><div class="cert reveal">Certified SOC Analyst L1<small>Savory Minds</small></div><div class="cert reveal">Web Developer<small>Remark Skill Education — additional certification</small></div><div class="cert reveal">Web Application with AngularJS<small>Coursera — additional certification</small></div></div>
+</div></section>
+
+<section id="contact"><div class="wrap"><div class="contact reveal">
+  <div><div class="num">06 / CONTACT</div><h2>Interested in building a safer digital world?</h2><p>Open to entry-level opportunities in SOC operations, security monitoring and cybersecurity analysis.</p><div class="btnrow"><a class="btn primary" href="mailto:devamahadeva44@gmail.com">Email me ↗</a><a class="btn" href="https://github.com/Mahadeva-Siddavatam" target="_blank" rel="noopener">GitHub ↗</a><a class="btn" href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn ↗</a></div></div>
+  <div class="contactdetails"><div><span>Email</span><a href="mailto:devamahadeva44@gmail.com">devamahadeva44@gmail.com</a></div><div><span>Phone</span><a href="tel:+916304424779">+91 6304424779</a></div><div><span>Location</span><strong>Andhra Pradesh, India</strong></div><div><span>Target roles</span><strong>SOC Analyst L1 · Cybersecurity Analyst</strong></div></div>
+</div></div></section>
+</main>
+<footer><div class="wrap">© <span id="year"></span> MAHADEVA SIDDAVATAM · CYBERSECURITY PORTFOLIO</div></footer>
+<script>
+  const menu=document.getElementById('menu'),nav=document.getElementById('nav');
+  menu.addEventListener('click',()=>{const open=nav.classList.toggle('open');menu.setAttribute('aria-expanded',String(open));});
+  nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');menu.setAttribute('aria-expanded','false');}));
+  document.getElementById('year').textContent=new Date().getFullYear();
+  const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('show');observer.unobserve(e.target);}}),{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+  const sections=[...document.querySelectorAll('main section[id]')],links=[...document.querySelectorAll('.navlinks a')];
+  window.addEventListener('scroll',()=>{let current='';sections.forEach(s=>{if(window.scrollY>=s.offsetTop-150)current=s.id;});links.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+current));},{passive:true});
+</script>
+</body>
+</html>
